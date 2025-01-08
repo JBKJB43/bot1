@@ -367,7 +367,7 @@ if __name__ == "__main__":
 
     # Указываем ссылку для вебхука
     async def start_bot():
-        webhook_url = "https://worker-production-98c84.up.railway.app/prodamus_webhook"
+        webhook_url = ""
         await bot.set_webhook(url=webhook_url)
         await main()
 
@@ -376,7 +376,7 @@ if __name__ == "__main__":
         app = web.Application()
         app.router.add_post('/prodamus_webhook', handle_prodamus_webhook)
 
-        web.run_app(app, port=8080)
+        web.run_app(app, port=)
         asyncio.run(start_bot())
         asyncio.run(check_subscriptions_and_send_reminders())
 
